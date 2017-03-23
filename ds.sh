@@ -18,8 +18,13 @@ function translate()
 }
 
 # Get the translated response
-translate $unkmown_word
+translate $unkmown_word;
+
+# use jq to parse the response json
+phonetic=`echo $translate_res | jq '.basic.phonetic'`;
+explains=`echo $translate_res | jq '.basic.explains[]'`;
 
 # Print the data
-echo "待翻译词汇: $unkmown_word";
-echo "翻译结果: $translate_res";
+echo "$unkmown_word[$phonetic]";
+echo "翻译：";
+echo "$explains";
