@@ -12,19 +12,19 @@ function translate()
 {
   base_url="http://fanyi.youdao.com/openapi.do";
   req_params="keyfrom=$keyfrom&key=$key&type=data&doctype=json&version=1.1&only=dict&q=$1";
-  res=`curl -H "charset=UTF-8" -d $req_params "http://fanyi.youdao.com/openapi.do"`;
+  res=`curl -s -H "charset=UTF-8" -d $req_params "http://fanyi.youdao.com/openapi.do"`;
   translate_res=$res;
   return;
 }
 
-# Get the translated response
+# get the translated response
 translate $unkmown_word;
 
 # use jq to parse the response json
 phonetic=`echo $translate_res | jq '.basic.phonetic'`;
 explains=`echo $translate_res | jq '.basic.explains[]'`;
 
-# Print the data
+# print the data
 echo "$unkmown_word[$phonetic]";
 echo "翻译：";
 echo "$explains";
