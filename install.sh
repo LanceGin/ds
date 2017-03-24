@@ -17,7 +17,7 @@ if [ ! $DS_KEYFROM ]; then
   read is_default
 
   # check the value get from user
-  while [ "$is_default" != "D" ] && [ "$is_default" != "S" ] && [ "$is_default" != "d" ] && [ "$is_default" != "s" ]; do
+  while [ $is_default != "D" ] && [ $is_default != "S" ] && [ $is_default != "d" ] && [ $is_default != "s" ]; do
     echo "Use the default api key or set by yourself? [D/S] D -> defalut, S -> Set"
     read is_default
   done
