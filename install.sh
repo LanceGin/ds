@@ -41,11 +41,11 @@ hash jq >/dev/null 2>&1 || {
   echo "**** jq not installed."
   echo "**** start installing jq"
   echo "****"
-  git clone --depth=1 https://github.com/stedolan/jq.git /opt/jq || {
+  git clone --depth=1 https://github.com/stedolan/jq.git ~/.jq || {
     echo "Error: git clone jq repo failed\n"
     exit 1
   }
-  cd /opt/jq
+  cd ~/.jq
   autoreconf -i
   ./configure --disable-maintainer-mode
   make
