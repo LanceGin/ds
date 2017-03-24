@@ -13,13 +13,11 @@ echo "****"
 
 # check whether exists $DS_KEYFROM and $DS_KEY
 if [ ! $DS_KEYFROM ]; then
-  echo -n "Use the default api key or set by yourself? D -> defalut, S -> Set [D/S] :"
-  read is_default
+  read -p "Use the default api key or set by yourself? D -> defalut, S -> Set [D/S] :" is_default
 
   # check the value get from user
   while [ "$is_default" != "D" ] && [ "$is_default" != "S" ] && [ "$is_default" != "d" ] && [ "$is_default" != "s" ]; do
-    echo -n "Use the default api key or set by yourself? D -> defalut, S -> Set [D/S] :"
-    read is_default
+    read -p "Use the default api key or set by yourself? D -> defalut, S -> Set [D/S] :" is_default
   done
 
   # default key or reset?
