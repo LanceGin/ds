@@ -53,8 +53,15 @@ hash jq >/dev/null 2>&1 || {
 }
 
 # define a function to install ds bin shell
-echo "install ds bin shell"
-
+echo "****"
+echo "****"
+echo "****"
+git clone --depth=1 https://git@github.com:LanceGin/ds.git /opt || {
+  echo "Error: git clone ds repo failed\n"
+  exit 1
+}
+chmod +x /opt/ds/bin/ds.sh
+ln -s /opt/ds/bin/ds.sh /usr/local/bin/ds
 
 # success
 echo '         __             '

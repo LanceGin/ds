@@ -4,8 +4,8 @@
 unkmown_word="$1"
 
 # get the YouDao api token
-keyfrom="gin-shell"
-key="1361115375"
+keyfrom=$DS_KEYFROM
+key=$DS_KEY
 
 # define a function to open a HTTP request
 function translate()
