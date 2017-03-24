@@ -14,18 +14,19 @@
 
 # Install
 
-1. save the install script
+## 1. save the install script
 
-  curl -L https://raw.githubusercontent.com/LanceGin/ds/master/install.sh > install.sh
+	curl -L https://raw.githubusercontent.com/LanceGin/ds/master/install.sh > install.sh
   
-2. excute the install script
+## 2. excute the install script
 
-  bash install.sh
+	bash install.sh
   
-3. source the bashrc file
+## 3. source the bashrc file
 
-  source ~/.bashrc
+	source ~/.bashrc
   
-4. delete the install script
+## 4. delete the install script
 
-  rm install.sh 
+	rm install.sh
+	
