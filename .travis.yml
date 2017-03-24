@@ -1,4 +1,4 @@
 language: bash
-
+sudo: required
 script:
     - echo d | bash install.sh

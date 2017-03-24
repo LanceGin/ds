@@ -1,4 +1,5 @@
 # ds
+[![Build Status](https://travis-ci.org/LanceGin/ds.svg?branch=master)](https://travis-ci.org/LanceGin/ds)
 
 > a small dictionary tool running in the shell
 
