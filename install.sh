@@ -37,33 +37,33 @@ if [ ! $DS_KEYFROM ]; then
   fi
 fi
 
-# check whether exists jq
-hash jq >/dev/null 2>&1 || {
-  echo "****"
-  echo "**** jq not installed."
-  echo "**** start installing jq"
-  echo "****"
-  git clone --depth=1 https://github.com/stedolan/jq.git /opt/jq || {
-    echo "Error: git clone jq repo failed\n"
-    exit 1
-  }
-  cd /opt/jq
-  autoreconf -i
-  ./configure --disable-maintainer-mode
-  make
-  sudo make install
-}
+# # check whether exists jq
+# hash jq >/dev/null 2>&1 || {
+#   echo "****"
+#   echo "**** jq not installed."
+#   echo "**** start installing jq"
+#   echo "****"
+#   git clone --depth=1 https://github.com/stedolan/jq.git /opt/jq || {
+#     echo "Error: git clone jq repo failed\n"
+#     exit 1
+#   }
+#   cd /opt/jq
+#   autoreconf -i
+#   ./configure --disable-maintainer-mode
+#   make
+#   sudo make install
+# }
 
-# define a function to install ds bin shell
-echo "****"
-echo "****"
-echo "****"
-git clone --depth=1 https://github.com/LanceGin/ds.git ~/.ds || {
-  echo "Error: git clone ds repo failed\n"
-  exit 1
-}
-chmod +x ~/.ds/bin/ds.sh
-ln -s ~/.ds/bin/ds.sh /usr/local/bin/ds
+# # define a function to install ds bin shell
+# echo "****"
+# echo "****"
+# echo "****"
+# git clone --depth=1 https://github.com/LanceGin/ds.git ~/.ds || {
+#   echo "Error: git clone ds repo failed\n"
+#   exit 1
+# }
+# chmod +x ~/.ds/bin/ds.sh
+# ln -s ~/.ds/bin/ds.sh /usr/local/bin/ds
 
 # success
 echo '         __             '
