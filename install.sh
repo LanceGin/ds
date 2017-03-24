@@ -26,11 +26,12 @@ hash ds >/dev/null 2>&1 || {
     DS_KEY="1361115375"
     echo "export DS_KEYFROM=\"$DS_KEYFROM\"" >> ~/.bashrc
     echo "export DS_KEY=\"$DS_KEY\"" >> ~/.bashrc
-
-    echo "DS_KEYFROM: $DS_KEYFROM"
-    echo "DS_KEY: $DS_KEY"
   elif [ "$is_default" = 'S' ] || [ "$is_default" = 's' ]; then
     echo "reset key"
+    read -p "Set your own keyfrom:" USER_KEYFROM
+    read -p "Set your own key:" USER_KEY
+    echo "export DS_KEYFROM=\"$USER_KEYFROM\"" >> ~/.bashrc
+    echo "export DS_KEY=\"$USER_KEY\"" >> ~/.bashrc
   fi
 }
 
