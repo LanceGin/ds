@@ -25,9 +25,11 @@ if [ ! $DS_KEYFROM ]; then
   # default key or reset?
   if [ $is_default = 'D' ] || [ $is_default = 'd' ]; then
     DS_KEYFROM="gin-shell"
-    export DS_KEYFROM
     DS_KEY="1361115375"
-    export DS_KEY
+    echo "export DS_KEYFROM=\"$DS_KEYFROM\"" >> ~/.bashrc
+    echo "export DS_KEY=\"$DS_KEY\"" >> ~/.bashrc
+    source ~/.bashrc
+
     echo "DS_KEYFROM: $DS_KEYFROM"
     echo "DS_KEY: $DS_KEY"
   elif [ $is_default = 'S' ] || [ $is_default = 's' ]; then
@@ -41,7 +43,7 @@ hash jq >/dev/null 2>&1 || {
   echo "**** jq not installed."
   echo "**** start installing jq"
   echo "****"
-  git clone --depth=1 https://github.com/stedolan/jq.git /opt || {
+  git clone --depth=1 https://github.com/stedolan/jq.git /opt/jq || {
     echo "Error: git clone jq repo failed\n"
     exit 1
   }
@@ -56,12 +58,12 @@ hash jq >/dev/null 2>&1 || {
 echo "****"
 echo "****"
 echo "****"
-git clone --depth=1 https://git@github.com:LanceGin/ds.git /opt || {
+git clone --depth=1 https://github.com/LanceGin/ds.git ~/.ds || {
   echo "Error: git clone ds repo failed\n"
   exit 1
 }
-chmod +x /opt/ds/bin/ds.sh
-ln -s /opt/ds/bin/ds.sh /usr/local/bin/ds
+chmod +x ~/.ds/bin/ds.sh
+ln -s ~/.ds/bin/ds.sh /usr/local/bin/ds
 
 # success
 echo '         __             '
