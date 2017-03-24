@@ -15,13 +15,11 @@ echo "****"
 if [ ! $DS_KEYFROM ]; then
   echo "Use the default api key or set by yourself? [D/S] D -> defalut, S -> Set"
   read is_default
-
   # check the value get from user
   while [ $is_default != "D" ] && [ $is_default != "S" ] && [ $is_default != "d" ] && [ $is_default != "s" ]; do
     echo "Use the default api key or set by yourself? [D/S] D -> defalut, S -> Set"
     read is_default
   done
-
   # default key or reset?
   if [ $is_default = 'D' ] || [ $is_default = 'd' ]; then
     DS_KEYFROM="gin-shell"
