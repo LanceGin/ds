@@ -12,58 +12,57 @@ echo "**** now start installing..."
 echo "****"
 
 # check whether exists $DS_KEYFROM and $DS_KEY
-if [[ ! $DS_KEYFROM ]]; then
+if [ ! $DS_KEYFROM ]; then
   echo "Use the default api key or set by yourself? [D/S] D -> defalut, S -> Set"
   read is_default
 
   # check the value get from user
-  while [[ $is_default != "D" ]] && [[ $is_default != "S" ]] && [[ $is_default != "d" ]] && [[ $is_default != "s" ]]; do
+  while [ $is_default != "D" ] && [ $is_default != "S" ] && [ $is_default != "d" ] && [ $is_default != "s" ]; do
     echo "Use the default api key or set by yourself? [D/S] D -> defalut, S -> Set"
     read is_default
   done
 
   # default key or reset?
-  if [[ $is_default = 'D' ]] || [[ $is_default = 'd' ]]; then
+  if [ $is_default = 'D' ] || [ $is_default = 'd' ]; then
     DS_KEYFROM="gin-shell"
     DS_KEY="1361115375"
     echo "export DS_KEYFROM=\"$DS_KEYFROM\"" >> ~/.bashrc
     echo "export DS_KEY=\"$DS_KEY\"" >> ~/.bashrc
-    source ~/.bashrc
 
     echo "DS_KEYFROM: $DS_KEYFROM"
     echo "DS_KEY: $DS_KEY"
-  elif [[ $is_default = 'S' ]] || [[ $is_default = 's' ]]; then
+  elif [ $is_default = 'S' ] || [ $is_default = 's' ]; then
     echo "reset key"
   fi
 fi
 
-# # check whether exists jq
-# hash jq >/dev/null 2>&1 || {
-#   echo "****"
-#   echo "**** jq not installed."
-#   echo "**** start installing jq"
-#   echo "****"
-#   git clone --depth=1 https://github.com/stedolan/jq.git /opt/jq || {
-#     echo "Error: git clone jq repo failed\n"
-#     exit 1
-#   }
-#   cd /opt/jq
-#   autoreconf -i
-#   ./configure --disable-maintainer-mode
-#   make
-#   sudo make install
-# }
+# check whether exists jq
+hash jq >/dev/null 2>&1 || {
+  echo "****"
+  echo "**** jq not installed."
+  echo "**** start installing jq"
+  echo "****"
+  git clone --depth=1 https://github.com/stedolan/jq.git /opt/jq || {
+    echo "Error: git clone jq repo failed\n"
+    exit 1
+  }
+  cd /opt/jq
+  autoreconf -i
+  ./configure --disable-maintainer-mode
+  make
+  sudo make install
+}
 
-# # define a function to install ds bin shell
-# echo "****"
-# echo "****"
-# echo "****"
-# git clone --depth=1 https://github.com/LanceGin/ds.git ~/.ds || {
-#   echo "Error: git clone ds repo failed\n"
-#   exit 1
-# }
-# chmod +x ~/.ds/bin/ds.sh
-# ln -s ~/.ds/bin/ds.sh /usr/local/bin/ds
+# define a function to install ds bin shell
+echo "****"
+echo "****"
+echo "****"
+git clone --depth=1 https://github.com/LanceGin/ds.git ~/.ds || {
+  echo "Error: git clone ds repo failed\n"
+  exit 1
+}
+chmod +x ~/.ds/bin/ds.sh
+ln -s ~/.ds/bin/ds.sh /usr/local/bin/ds
 
 # success
 echo '         __             '
