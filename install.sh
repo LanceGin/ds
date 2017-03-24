@@ -12,7 +12,7 @@ echo "**** now start installing..."
 echo "****"
 
 # check whether exists $DS_KEYFROM and $DS_KEY
-if [ ! $DS_KEYFROM ]; then
+hash ds >/dev/null 2>&1 || {
   read -p "Use the default api key or set by yourself? D -> defalut, S -> Set [D/S] :" is_default
 
   # check the value get from user
@@ -32,7 +32,7 @@ if [ ! $DS_KEYFROM ]; then
   elif [ "$is_default" = 'S' ] || [ "$is_default" = 's' ]; then
     echo "reset key"
   fi
-fi
+}
 
 # check whether exists jq
 hash jq >/dev/null 2>&1 || {
