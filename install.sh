@@ -12,7 +12,7 @@ echo "**** now start installing..."
 echo "****"
 
 # check whether exists $DS_KEYFROM and $DS_KEY
-if [ ! $DS_KEYFROM ]; then
+if [[ ! $DS_KEYFROM ]]; then
   echo "Use the default api key or set by yourself? [D/S] D -> defalut, S -> Set"
   read is_default
 
