@@ -1,7 +1,7 @@
 # ds
 [![Build Status](https://travis-ci.org/LanceGin/ds.svg?branch=master)](https://travis-ci.org/LanceGin/ds)
 
-> a small dictionary tool running in the shell
+>    'ds' means 'dictionary shell', it helps you to translate a word from Chinese to English or from English to Chinese in a terminal. The translation based on YOUDAO traslate api.
 
 # Feature
 
