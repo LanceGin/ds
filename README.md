@@ -48,4 +48,8 @@
 ## 4. update ds
 
 	ds -c update
-	
+
+## 5. reset YOUDAO api key and keyfrom
+
+	ds -c reset_key
+	source ~/.bashrc

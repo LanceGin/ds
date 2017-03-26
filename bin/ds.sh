@@ -46,16 +46,6 @@ while [ -n "$1" ]; do
         uninstall_ds
       elif [ "$param" = "update" ]; then
         update_ds
-        # cd ~/.ds
-        # git pull
-        # # success
-        # echo '****         __             '
-        # echo '****     ___/ /        _____'
-        # echo '****   /`__  /       / ___/ '
-        # echo '****  / /_/ /  __   (__  )  '
-        # echo '**** /_ _ _/  /_/ /_____/   '
-        # echo '****                           ....is now updated!'
-        # echo '****'
       elif [ "$param" = "reset_key" ]; then
         reset_key
       fi
