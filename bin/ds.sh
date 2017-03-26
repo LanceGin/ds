@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# source command shell
+. ~/ds/bin/command.sh
+
 # get the YouDao api token
 keyfrom=$DS_KEYFROM
 key=$DS_KEY
@@ -40,18 +43,21 @@ while [ -n "$1" ]; do
     -c )
       param="$2"
       if [ "$param" = "uninstall" ]; then
-        echo "uninstall ds"
+        uninstall_ds
       elif [ "$param" = "update" ]; then
-        cd ~/.ds
-        git pull
-        # success
-        echo '****         __             '
-        echo '****     ___/ /        _____'
-        echo '****   /`__  /       / ___/ '
-        echo '****  / /_/ /  __   (__  )  '
-        echo '**** /_ _ _/  /_/ /_____/   '
-        echo '****                           ....is now updated!'
-        echo '****'
+        update_ds
+        # cd ~/.ds
+        # git pull
+        # # success
+        # echo '****         __             '
+        # echo '****     ___/ /        _____'
+        # echo '****   /`__  /       / ___/ '
+        # echo '****  / /_/ /  __   (__  )  '
+        # echo '**** /_ _ _/  /_/ /_____/   '
+        # echo '****                           ....is now updated!'
+        # echo '****'
+      elif [ "$param" = "reset_key" ]; then
+        reset_key
       fi
       shift ;;
     -- )
