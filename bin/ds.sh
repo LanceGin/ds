@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # source command shell
-. ~/ds/bin/command.sh
+. ~/.ds/bin/command.sh
 
 # get the YouDao api token
 keyfrom=$DS_KEYFROM
