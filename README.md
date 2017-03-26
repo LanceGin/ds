@@ -30,4 +30,14 @@
 ## 4. delete the install script
 
 	rm install.sh
+
+# Api
+
+## 1. uninstall ds
+
+	ds -c uninstall
+  
+## 2. update ds
+
+	ds -c update
 	
