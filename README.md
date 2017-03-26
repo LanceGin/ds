@@ -31,13 +31,21 @@
 
 	rm install.sh
 
-# Api
+# Usage
 
-## 1. uninstall ds
+## 1. translate English
+
+	ds ENG_WORD
+  
+## 2. translate Chinese
+
+	ds 中文词汇
+
+## 3. uninstall ds
 
 	ds -c uninstall
   
-## 2. update ds
+## 4. update ds
 
 	ds -c update
 	
