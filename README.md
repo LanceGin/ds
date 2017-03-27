@@ -13,24 +13,6 @@
 
 ![alt text](http://wx3.sinaimg.cn/mw1024/89243dfbgy1fdwz04r67ag20ko09wn1b.gif "Title")
 
-# Install
-
-## 1. save the install script
-
-	curl -L https://raw.githubusercontent.com/LanceGin/ds/master/install.sh > install.sh
-  
-## 2. excute the install script
-
-	bash install.sh
-  
-## 3. source the bashrc file
-
-	source ~/.bashrc
-  
-## 4. delete the install script
-
-	rm install.sh
-
 # Usage
 
 ## 1. translate English
@@ -41,15 +23,24 @@
 
 	ds 中文词汇
 
-## 3. uninstall ds
+# Api
+
+## 1. install
+
+	curl -L https://raw.githubusercontent.com/LanceGin/ds/master/install.sh > install.sh
+	bash install.sh
+	source ~/.bashrc
+	rm install.sh
+
+## 2. uninstall
 
 	ds -c uninstall
   
-## 4. update ds
+## 3. update
 
 	ds -c update
 
-## 5. reset YOUDAO api key and keyfrom
+## 4. reset YOUDAO api key and keyfrom
 
 	ds -c reset_key
 	source ~/.bashrc
